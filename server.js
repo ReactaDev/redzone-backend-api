@@ -13,7 +13,6 @@ app.post('/test', (req, res) => {
 })
 
 
-//test
 //listen on port
 
 app.listen(8080)
