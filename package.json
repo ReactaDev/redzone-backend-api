@@ -1,0 +1,23 @@
+{
+  "name": "redzone-backend-api",
+  "version": "1.0.0",
+  "description": "Backend API for redzone",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Super-2019/redzone-backend-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Super-2019/redzone-backend-api/issues"
+  },
+  "homepage": "https://github.com/Super-2019/redzone-backend-api#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
