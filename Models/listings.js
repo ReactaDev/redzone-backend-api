@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 var listing = new Schema({
     
     address: string,
@@ -9,11 +10,9 @@ var listing = new Schema({
     client: string,
     contractValue: string,
     commision: string,
-
     createdDate: Date.now
 
 })
 
-const data = mongoose.model("data", listing)
 
-module.exports = data
+module.exports = mongoose.model('Listings', listing)

@@ -8,11 +8,12 @@ const port = 8080
 const authRoutes = require('./routes/posts/auth')
 app.use('/auth', authRoutes)
 
+const listingCreateRoutes = require('./routes/posts/listingCreate')
+app.use('/listing', listingCreateRoutes)
+
 
 //connect to db
-
-
-//mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true })
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true })
 
 
 app.use(express.json())
