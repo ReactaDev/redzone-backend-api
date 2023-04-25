@@ -1,7 +1,19 @@
-const express = require('express')
-const app = express()
-const mongoose = require('mongoose')
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+require("dotenv/config");
 const port = 8080
+//import routes
+//auth posts
+const authRoutes = require('./routes/posts/auth')
+app.use('/auth', authRoutes)
+
+
+//connect to db
+
+
+//mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true })
+
 
 app.use(express.json())
 
