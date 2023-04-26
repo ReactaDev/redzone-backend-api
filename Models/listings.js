@@ -4,15 +4,14 @@ const Schema = mongoose.Schema;
 
 var listing = new Schema({
     
-    address: string,
-    closingDate: string,
-    lender: string,
-    client: string,
-    contractValue: string,
-    commision: string,
-    createdDate: Date.now
+    address: String,
+    closingDate: String,
+    lender: String,
+    client: String,
+    contractValue: String,
+    commision: String,
 
 })
 
 
-module.exports = mongoose.model('Listings', listing)
+module.exports = mongoose.model('listings', listing)

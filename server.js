@@ -11,6 +11,11 @@ app.use('/auth', authRoutes)
 const listingCreateRoutes = require('./routes/posts/listingCreate')
 app.use('/listing', listingCreateRoutes)
 
+const listingGetRoute = require('./routes/posts/listingGet')
+app.use('/listing', listingGetRoute)
+
+//jsob parser
+
 
 //connect to db
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true })
