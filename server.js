@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 require("dotenv/config");
 const port = 8080
 //import routes
-//auth posts
 const authRoutes = require('./routes/posts/auth')
 app.use('/auth', authRoutes)
 
@@ -13,6 +12,9 @@ app.use('/listing', listingCreateRoutes)
 
 const listingGetRoute = require('./routes/posts/listingGet')
 app.use('/listing', listingGetRoute)
+
+const listingDeleteRoute = require('./routes/posts/listingDelete')
+app.use('/listing', listingDeleteRoute)
 
 //jsob parser
 
