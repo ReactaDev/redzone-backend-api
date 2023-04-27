@@ -7,7 +7,12 @@ var listing = new Schema({
     address: String,
     closingDate: String,
     lender: String,
-    client: String,
+    client: {
+        firstName: String,
+        lastName: String,
+        phoneNumber: String,
+        email: String
+    },
     contractValue: String,
     commision: String,
     createdUser: String,
