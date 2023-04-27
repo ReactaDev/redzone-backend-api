@@ -10,6 +10,7 @@ var listing = new Schema({
     client: String,
     contractValue: String,
     commision: String,
+    createdUser: String,
 
 })
 

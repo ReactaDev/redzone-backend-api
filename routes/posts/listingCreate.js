@@ -16,7 +16,8 @@ router.post('/create', async (req, res) => {
     lender: req.body.lender,
     client: req.body.client,
     contractValue: req.body.contractValue,
-    commision: req.body.commision
+    commision: req.body.commision,
+    createdUser: req.body.createdUser
    });
 
    const savedListing = await Listing.save()
