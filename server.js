@@ -36,4 +36,4 @@ app.post('/test', (req, res) => {
 
 //listen on port
 
-app.listen(80)
+app.listen(process.env.port)
