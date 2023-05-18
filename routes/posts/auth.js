@@ -7,6 +7,7 @@ const express = require('express');
 
 const router = express.Router();
 
+router.use(express.json())
 //routes
 
 router.post('/', (req, res) => {
@@ -18,10 +19,14 @@ router.get('/connect', (req, res) => {
     res.send('Redzone API Connection Test')
 })
 
-router.post('signup', (req, res) => {
+router.post('/register', (req, res) => {
+    res.send('Register')
+})
 
+router.post('/login', (req, res) => {
+    
 })
 
 
 //exports as
-module.exports = router;
+module.exports = router
