@@ -5,18 +5,19 @@ const Listings = require('../../models/listings')
 
 router.use(express.json())
 
-//gets listings of a user
-
-
-//Created User means the use that created the listing. This does NOT create a new user
+// * gets listings of a user
+// ! Created User means the use that created the listing. This does NOT create a new user
 router.get('/:createdUser', async (req, res) => {
 
     try {
+        // makes a variable called 'listings' and uses the find() to search for the user that created the listing.
         const listings = await Listings.find({createdUser: req.params.createdUser});
-
+        
         if (listings.length){
+            // ? Returns Listings
             res.json(listings)
         } else {
+            // ? Returns errror on no listings
             res.json({
                 message: "There are no listings",
                 sucess: false
@@ -28,9 +29,6 @@ router.get('/:createdUser', async (req, res) => {
 
 })
 
-//gets all post
-
-
 // ***REMOVE BEFORE PRODUCTION***
 router.get('/', async (req, res) => {
     const listings = await Listings.find()
@@ -41,5 +39,5 @@ router.get('/', async (req, res) => {
 router.get('/rickroll', (req, res) => {
     res.redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 })
-
+// Exports listings as router
 module.exports = router
