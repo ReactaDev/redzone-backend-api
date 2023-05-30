@@ -2,38 +2,42 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require("dotenv/config");
-const port = 8080
-//import routes
-const authRoutes = require('./routes/posts/auth')
-app.use('/auth', authRoutes)
 
-const listingCreateRoutes = require('./routes/posts/listingCreate')
+//Runs on 3000 for NGINX
+//NGINX proxy passes to 3000 to 80
+const port = 3000
+
+//DB Connection Creds
+const DB_CONNECTION = process.env.DB_CONNECTION
+
+//import routes
+const listingCreateRoutes = require('./routes/listings/listingCreate')
 app.use('/listing', listingCreateRoutes)
 
-const listingGetRoute = require('./routes/posts/listingGet')
+const listingGetRoute = require('./routes/listings/listingGet')
 app.use('/listing', listingGetRoute)
 
-const listingDeleteRoute = require('./routes/posts/listingDelete')
+const listingDeleteRoute = require('./routes/listings/listingDelete')
 app.use('/listing', listingDeleteRoute)
 
-//jsob parser
+const personCreateRouter = require('./routes/people/personCreate')
+app.use('/person', personCreateRouter)
 
+const personGetRouter = require('./routes/people/personGet')
+app.use('/person', personGetRouter)
 
 //connect to db
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true })
+mongoose.connect(DB_CONNECTION, { useNewUrlParser: true })
 
-
+//json parser
 app.use(express.json())
 
-//server code here
-
+//Server Test Route
 app.post('/test', (req, res) => {
     const body1 = req.body.message
 
     res.send(body1)
 })
 
-
 //listen on port
-
 app.listen(3000)
