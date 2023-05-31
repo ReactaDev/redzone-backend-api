@@ -40,4 +40,6 @@ app.post('/test', (req, res) => {
 })
 
 //listen on port
-app.listen(3000)
+app.listen(3000, () => {
+    console.log('Started on port 3000')
+})

@@ -12,9 +12,18 @@ const Listings = require('../../models/listings')
 router.delete('/:listingID', async (req, res) =>{
 
     const listingID = Listings.find(req.params._id)
-    res.send('Listing Deleted')
-
-    const deletedListing = await Listings.deleteOne({_id: req.params.listingID})
+    if (listingID) {
+        res.send({
+            status: 200,
+            output: '${listingID}'
+        })
+        const deletedListing = await Listings.deleteOne({_id: req.params.listingID})
+    } else {
+        res.send({
+            status: 200,
+            error: "listing not found"
+        })
+    }
 
 })
 
