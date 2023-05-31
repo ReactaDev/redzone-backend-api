@@ -7,8 +7,6 @@ router.use(express.json())
 const Listings = require('../../models/listings')
 
 //posts
-
-//delete
 router.delete('/:listingID', async (req, res) =>{
 
     const listingID = Listings.find(req.params._id)
@@ -26,10 +24,6 @@ router.delete('/:listingID', async (req, res) =>{
     }
 
 })
-
-
-
-
 
 //exports
 module.exports = router

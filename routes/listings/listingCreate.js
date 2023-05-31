@@ -1,6 +1,8 @@
 /*
 ! API Is NOT secured
 TODO: Route Auth Perms Through from Auth0
+
+! Not Producation Ready
 */
 
 //import Dependecys
@@ -29,7 +31,10 @@ router.post('/', async (req, res) => {
 
    const savedListing = await Listing.save()
    res.json(savedListing)
-    
+
+   // ! DEBUG Funcation
+   // ! Remove before production
+   console.log("Listing Created")
 })
 
 
